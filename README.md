@@ -54,6 +54,11 @@ Follow steps below:
 <br><br>
 3. You will copy Access key and Secret key or download for backup, if your forgotten
 <img width="1415" alt="Screenshot 2023-09-23 at 08 23 05" src="https://github.com/firmanJS/minio-demo/assets/5679509/dc949aa4-c8df-4e78-9c07-d51851fbaa18">
+dont forget fill the env
+```sh
+AWS_ACCESS=
+AWS_SECRET=
+```
 <br><br>
 4. After created go back to list and click detail
 <img width="1405" alt="Screenshot 2023-09-23 at 08 42 47" src="https://github.com/firmanJS/minio-demo/assets/5679509/22346e14-1e0d-4052-b159-b616fc9c3bb7">
@@ -61,16 +66,6 @@ Follow steps below:
 5. And add rule like this you can copy in file policy.example.json, dont forget rename to your bucket definition
 <img width="1421" alt="Screenshot 2023-09-23 at 08 43 16" src="https://github.com/firmanJS/minio-demo/assets/5679509/bdd3baf3-b662-4421-90c4-f9b9d767b166">
 
-
-### Create Permission to Client
-
-Follow steps below:
-
-1. Click on `Clients` in the left menu
-1. Click `Edit` button next to `demo_client`
-1. Click `Roles` tab and click button `Add Role` example Role Name = access_view
-1. Click `Mappers` on tab and click button `Add Builtin` checklist `client roles` and click save
-1. Click `edit` `client roles` in `Token Claim Name` change roles to `permission` and click save
 
 Now you have successfully finished the keycloak configuration for the new client application.
 

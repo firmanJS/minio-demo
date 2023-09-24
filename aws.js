@@ -3,8 +3,8 @@ require('dotenv').config();
 // Initializing S3 Interface
 const localSetup = {
    endpoint: process.env.AWS_ENDPOINT,
-   accessKeyId: process.env.AWS_SECRET,
-   secretAccessKey: process.env.AWS_ACCESS,
+   accessKeyId: process.env.AWS_ACCESS,
+   secretAccessKey: process.env.AWS_SECRET,
    sslEnabled: process.env.AWS_SSL,
    s3ForcePathStyle: process.env.AWS_FORCE_STYLE
 }
@@ -18,7 +18,7 @@ module.exports.uploadToMinio = async (options) => {
     const ContentType = { ContentType: mime };
 
     const params = {
-      Bucket: 'example',
+      Bucket: 'belajar',
       Key: options.req.file.originalname,
       Body: buffer,
       ...ContentType,
