@@ -67,5 +67,16 @@ AWS_SECRET=
 <img width="1421" alt="Screenshot 2023-09-23 at 08 43 16" src="https://github.com/firmanJS/minio-demo/assets/5679509/bdd3baf3-b662-4421-90c4-f9b9d767b166">
 
 
-Now you have successfully finished the keycloak configuration for the new client application.
+Now you have successfully finished the minio configuration. You can do testing using postman at this URL
+```bash
+# via postman
+[POST] http://localhost:1000/save-to-minio 
+body form data image
+
+# via curl
+curl --location 'http://localhost:1000/save-to-minio' \
+--form 'image=@"/path"'
+```
+
+
 
