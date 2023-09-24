@@ -25,10 +25,11 @@ module.exports.uploadToMinio = async (options) => {
     };
 
     // Uploading files to the bucket
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
       method.upload(params, async (errs, data) => {
         if (errs) {
           console.error('error aws', errs)
+          reject(errs)
         }
         resolve(data)
         console.info(`upload success ${JSON.stringify(data)}`)
@@ -36,6 +37,6 @@ module.exports.uploadToMinio = async (options) => {
     })
   } catch (error) {
    console.info(`error ${error}`)
-    return false
+    return error
   }
  }
