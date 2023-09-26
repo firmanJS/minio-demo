@@ -1,18 +1,27 @@
 const express = require('express')
 const multer = require('multer');
-const { uploadToMinio } = require('./aws');
+const { uploadToMinio, deleteFromMinio } = require('./aws');
 const app = express()
 const port = 1000
 const upload = multer();
 app.use(express.json())
 
 app.post('/save-to-minio',upload.single('image'),async (req, res) => {
-   try {
-      const result = await uploadToMinio({ req })
-      res.json(result)
-   } catch (error) {
-      res.json(error)
-   }
+  try {
+     const result = await uploadToMinio({ req })
+     res.json(result)
+  } catch (error) {
+     res.json(error)
+  }
+})
+
+app.delete('/delete-from-minio',async (req, res) => {
+  try {
+     const result = await deleteFromMinio({ req })
+     res.json(result)
+  } catch (error) {
+     res.json(error)
+  }
 })
 
 app.listen(port,() => {
